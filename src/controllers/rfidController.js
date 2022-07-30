@@ -6,10 +6,9 @@ const single = async (req, res) => {
     res.json(val);
 };
 
-const multi = async (req, res) => {
+const multi = (req, res) => {
     // res.send(`Run multiple scan`);
-    const text = await rfidService.multiScan();
-    res.send(text);
+    rfidService.multiScan();
 };
 
 module.exports = { single, multi };
