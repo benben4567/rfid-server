@@ -46,6 +46,7 @@ const multiScan = async () => {
     await axios.get(baseUrl + '/aktivitas/check')
         .then((response) => {
             let data = response.data.data
+            console.log(chalk.green("[INFO]", chalk.cyan("Scanner aktif")))
             scan(data.id)
         })
         .catch((err) => {
