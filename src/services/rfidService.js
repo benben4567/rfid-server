@@ -50,7 +50,7 @@ const multiScan = async () => {
         })
         .catch((err) => {
             if (err.response.status == 404) {
-                console.log(chalk.red("[ERROR]", chalk.cyan("Tidak ada Scanner yang aktif")))
+                console.log(chalk.yellow("[INFO]", chalk.cyan("Tidak ada Scanner yang aktif")))
             } else {
                 console.log(err.response)
             }
