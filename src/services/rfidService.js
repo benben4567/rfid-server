@@ -49,7 +49,11 @@ const multiScan = async () => {
             scan(data.id)
         })
         .catch((err) => {
-            console.log(err)
+            if (err.response.status == 404) {
+                console.log(chalk.red("[ERROR]", chalk.cyan("Tidak ada Scanner yang aktif")))
+            } else {
+                console.log(err.response)
+            }
         });
 }
 
